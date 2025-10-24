@@ -1,4 +1,4 @@
-# Guía de usuario - Aplicación web para regresión lineal en Kotlin - Angel Arcos, Juan Orjuela
+# Guía de usuario - Aplicación web para regresión lineal en Kotlin
 
 ## Descripción general
 
