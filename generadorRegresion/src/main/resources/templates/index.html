@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regresión Lineal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Regresión Lineal</h1>
+    <form id="regressionForm">
+        <label for="dataPoints">Puntos de datos (x, y):</label>
+        <textarea id="dataPoints" name="dataPoints" placeholder="Ejemplo:\n1,2\n2,4\n3,6" required></textarea>
+        <div class="buttons">
+            <button type="submit" id="calculateBtn">Calcular</button>
+            <button type="button" id="clearBtn">Limpiar</button>
+        </div>
+        <button type="button" id="loadExampleBtn" class="link-btn">Cargar ejemplo</button>
+    </form>
+
+    <div id="errorMessage" class="error"></div>
+
+    <div id="resultsSection" class="hidden">
+        <h2>Resultados</h2>
+        <p><strong>Ecuación:</strong> <span id="equation">-</span></p>
+        <p><strong>Pendiente (m):</strong> <span id="slope">-</span></p>
+        <p><strong>Intersección (b):</strong> <span id="intercept">-</span></p>
+        <p><strong>R²:</strong> <span id="rSquared">-</span></p>
+
+        <div class="chart-container">
+            <canvas id="regressionChart"></canvas>
+        </div>
+
+        <div id="interpretation" class="interpretation-box"></div>
+    </div>
+</div>
+<script th:src="@{/js/chart-handler.js}"></script>
+</body>
+</html>
